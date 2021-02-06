@@ -5,4 +5,8 @@
 
 ![Node CI](https://github.com/bloodywd/frontend-project-lvl1/workflows/Node%20CI/badge.svg)
 
-[![asciicast](https://asciinema.org/a/HgfmDsxdWrEVYTubri3rvmv26.svg)](https://asciinema.org/a/HgfmDsxdWrEVYTubri3rvmv26)
+https://asciinema.org/a/UDeApbrXHYtYe7AQPsB20p6K7
+
+https://asciinema.org/a/0Cv6xpCc7RGfi4jRtwy2Npslo
+
+https://asciinema.org/a/lXcCA2YHn6KmzIZHf8XHdw7fY
