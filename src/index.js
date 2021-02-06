@@ -11,22 +11,24 @@ const playGame = (name, selectGame) => {
     answer: '',
     correctAnswer: '',
   };
-
+  let won = true;
   for (let i = 0; i < 3; i += 1) {
-    if (selectGame === 0) { [game.question, game.correctAnswer] = evenGame(); }
-    if (selectGame === 1) { [game.question, game.correctAnswer] = calcGame(); }
-    if (selectGame === 2) { [game.question, game.correctAnswer] = nodGame(); }
-    if (selectGame === 3) { [game.question, game.correctAnswer] = progressionGame(); }
-    if (selectGame === 4) { [game.question, game.correctAnswer] = primeGame(); }
-    console.log(`Question: ${game.question}`);
-    game.answer = readlineSync.question('Your answer: ');
-    if (game.answer === game.correctAnswer) { console.log('Correct!'); } else {
-      console.log(`'${game.answer}' is wrong answer ;(. Correct answer was '${game.correctAnswer}'`);
-      console.log(`Let's try again, ${name}`);
-      return;
+    if (won === true) {
+      if (selectGame === 0) { [game.question, game.correctAnswer] = evenGame(); }
+      if (selectGame === 1) { [game.question, game.correctAnswer] = calcGame(); }
+      if (selectGame === 2) { [game.question, game.correctAnswer] = nodGame(); }
+      if (selectGame === 3) { [game.question, game.correctAnswer] = progressionGame(); }
+      if (selectGame === 4) { [game.question, game.correctAnswer] = primeGame(); }
+      console.log(`Question: ${game.question}`);
+      game.answer = readlineSync.question('Your answer: ');
+      if (game.answer === game.correctAnswer) { console.log('Correct!'); } else {
+        console.log(`'${game.answer}' is wrong answer ;(. Correct answer was '${game.correctAnswer}'`);
+        console.log(`Let's try again, ${name}`);
+        won = false;
+      }
     }
   }
-  console.log(`Congratulations, ${name}`);
+  if (won) { console.log(`Congratulations, ${name}`); }
 };
 
 export default playGame;
