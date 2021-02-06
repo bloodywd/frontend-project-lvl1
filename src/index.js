@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 // import evenGame from './even-logic.js';
-import calcGame from './calc-logic.js';
+// import calcGame from './calc-logic.js';
+import nodGame from './nod-logic.js';
 
 const playGame = (name) => {
   const game = {
@@ -9,10 +10,10 @@ const playGame = (name) => {
     correctAnswer: '',
   };
 
-  console.log('What is the result of the expression?');
   for (let i = 0; i < 3; i += 1) {
     // [game.question, game.correctAnswer] = evenGame();
-    [game.question, game.correctAnswer] = calcGame();
+    // [game.question, game.correctAnswer] = calcGame();
+    [game.question, game.correctAnswer] = nodGame();
     console.log(`Question: ${game.question}`);
     game.answer = readlineSync.question('Your answer: ');
     if (game.answer === game.correctAnswer) { console.log('Correct!'); } else {

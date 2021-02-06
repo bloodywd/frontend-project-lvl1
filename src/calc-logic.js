@@ -1,4 +1,5 @@
 const calcGame = () => {
+  console.log('What is the result of the expression?');
   const randomNumber1 = Math.floor(Math.random() * 100);
   const randomNumber2 = Math.floor(Math.random() * 100);
   const operation = Math.floor(Math.random() * 2);
