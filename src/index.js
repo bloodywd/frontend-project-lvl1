@@ -3,6 +3,7 @@ import evenGame from './games/even-logic.js';
 import calcGame from './games/calc-logic.js';
 import nodGame from './games/nod-logic.js';
 import progressionGame from './games/progression-logic.js';
+import primeGame from './games/prime-logic.js';
 
 const playGame = (name, selectGame) => {
   const game = {
@@ -16,10 +17,12 @@ const playGame = (name, selectGame) => {
     if (selectGame === 1) { [game.question, game.correctAnswer] = calcGame(); }
     if (selectGame === 2) { [game.question, game.correctAnswer] = nodGame(); }
     if (selectGame === 3) { [game.question, game.correctAnswer] = progressionGame(); }
+    if (selectGame === 4) { [game.question, game.correctAnswer] = primeGame(); }
     console.log(`Question: ${game.question}`);
     game.answer = readlineSync.question('Your answer: ');
     if (game.answer === game.correctAnswer) { console.log('Correct!'); } else {
       console.log(`'${game.answer}' is wrong answer ;(. Correct answer was '${game.correctAnswer}'`);
+      console.log(`Let's try again, ${name}`);
       return;
     }
   }
