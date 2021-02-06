@@ -4,6 +4,7 @@ import calcGame from './games/calc-logic.js';
 import nodGame from './games/nod-logic.js';
 import progressionGame from './games/progression-logic.js';
 import primeGame from './games/prime-logic.js';
+import greeting from './cli.js';
 
 const playGame = (selectGame) => {
   const game = {
@@ -11,9 +12,8 @@ const playGame = (selectGame) => {
     answer: '',
     correctAnswer: '',
   };
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May i have your name?');
-  console.log(`Hello, ${name}`);
+
+  const name = greeting();
   let won = true;
   for (let i = 0; i < 3; i += 1) {
     if (won === true) {
