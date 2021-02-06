@@ -5,12 +5,15 @@ import nodGame from './games/nod-logic.js';
 import progressionGame from './games/progression-logic.js';
 import primeGame from './games/prime-logic.js';
 
-const playGame = (name, selectGame) => {
+const playGame = (selectGame) => {
   const game = {
     question: '',
     answer: '',
     correctAnswer: '',
   };
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May i have your name?');
+  console.log(`Hello, ${name}`);
   let won = true;
   for (let i = 0; i < 3; i += 1) {
     if (won === true) {
@@ -23,7 +26,7 @@ const playGame = (name, selectGame) => {
       game.answer = readlineSync.question('Your answer: ');
       if (game.answer === game.correctAnswer) { console.log('Correct!'); } else {
         console.log(`'${game.answer}' is wrong answer ;(. Correct answer was '${game.correctAnswer}'.`);
-        console.log(`Let's try again, ${name}`);
+        console.log(`Let's try again, ${name}!`);
         won = false;
       }
     }

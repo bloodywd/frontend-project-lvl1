@@ -8,7 +8,7 @@ const progressionGame = () => {
 
   let question = '';
   for (let i = 0; i < 10; i += 1) {
-    if (i === find) { question += ' ..'; } else question += ` ${firstNumber}`;
+    if (i === find) { question += '.. '; } else question += `${firstNumber} `;
     firstNumber += step;
   }
   return [question, answer];
