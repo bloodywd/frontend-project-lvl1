@@ -2,6 +2,9 @@
 install: # разворачивание и запуск
 	npm install
 
+install-deps:
+	npm ci
+
 brain-games: # 
 	node bin/brain-games.js
 
