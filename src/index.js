@@ -22,13 +22,13 @@ const playGame = (name, selectGame) => {
       console.log(`Question: ${game.question}`);
       game.answer = readlineSync.question('Your answer: ');
       if (game.answer === game.correctAnswer) { console.log('Correct!'); } else {
-        console.log(`'${game.answer}' is wrong answer ;(. Correct answer was '${game.correctAnswer}'`);
+        console.log(`'${game.answer}' is wrong answer ;(. Correct answer was '${game.correctAnswer}'.`);
         console.log(`Let's try again, ${name}`);
         won = false;
       }
     }
   }
-  if (won) { console.log(`Congratulations, ${name}`); }
+  if (won) { console.log(`Congratulations, ${name}!`); }
 };
 
 export default playGame;
